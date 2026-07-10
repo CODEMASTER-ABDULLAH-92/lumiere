@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+
+
+
+/* This is Outfit  */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+
+@import "tailwindcss";
+
+
+
+*{
+  /* font-family: 'Courier New', Courier, monospace; */
+  font-family: "Outfit", sans-serif;
+  font-weight: 400;
+}
+.eb{
+  font-family: "EB Garamond";
+}
