@@ -401,11 +401,11 @@ const ProductDetailPage = () => {
                 className="flex items-center gap-3 mb-6"
               >
                 <span className="text-2xl font-light">
-                  {product.displayPrice || `₹${product.price?.toLocaleString("en-IN")}`}
+                  {product.displayPrice || `${product.price?.toLocaleString("en-IN")}`}
                 </span>
                 {product.comparePrice && (
                   <span className="text-lg text-[#9a8d80] line-through font-light">
-                    ₹{product.comparePrice?.toLocaleString("en-IN")}
+                    {product.comparePrice?.toLocaleString("en-IN")}
                   </span>
                 )}
                 {product.stockStatus === "in_stock" ? (
@@ -471,7 +471,7 @@ const ProductDetailPage = () => {
                 className="space-y-3 mb-10"
               >
                 <p className="text-[10px] tracking-[0.2em] uppercase text-[#9a8d80] font-medium mb-3">
-                  Buy From
+                  Buy Now
                 </p>
                 
                 {activePlatforms.length > 0 ? (
@@ -485,10 +485,10 @@ const ProductDetailPage = () => {
                     >
                       <span className="flex items-center gap-3">
                         <ShoppingBag size={16} strokeWidth={1.5} />
-                        Buy on {platform.name}
+                        Buy Now
                       </span>
                       <span className="flex items-center gap-2 text-[10px] font-normal tracking-wider">
-                        {product.displayPrice || `₹${product.price?.toLocaleString("en-IN")}`}
+                        {product.displayPrice || `${product.price?.toLocaleString("en-IN")}`}
                         <ExternalLink size={14} strokeWidth={1.5} className="transition-transform duration-300 group-hover:translate-x-1" />
                       </span>
                     </a>
@@ -604,7 +604,7 @@ const ProductDetailPage = () => {
                       )}
                     </div>
                     <h3 className="text-[12px] text-[#1B1613] font-medium mb-1 group-hover:text-[#8B6F47] transition-colors line-clamp-2">{product.productName}</h3>
-                    <span className="text-[13px] font-light text-[#1B1613]">{product.displayPrice || `₹${product.price?.toLocaleString("en-IN")}`}</span>
+                    <span className="text-[13px] font-light text-[#1B1613]">{product.displayPrice || `${product.price?.toLocaleString("en-IN")}`}</span>
                   </Link>
                 </motion.div>
               ))}

@@ -148,9 +148,9 @@ const ProductCard = ({ product, viewMode, id }) => {
           </div>
           <p className="text-[12px] text-[#5c5248] line-clamp-2 mb-3 font-light">{product.description}</p>
           <div className="flex items-center gap-4">
-            <span className="text-[16px] font-medium text-[#1B1613]">{product.displayPrice || `₹${product.price?.toLocaleString("en-IN")}`}</span>
+            <span className="text-[16px] font-medium text-[#1B1613]">{product.displayPrice || `${product.price?.toLocaleString("en-IN")}`}</span>
             {product.comparePrice && (
-              <span className="text-[12px] text-[#9a8d80] line-through">₹{product.comparePrice?.toLocaleString("en-IN")}</span>
+              <span className="text-[12px] text-[#9a8d80] line-through">{product.comparePrice?.toLocaleString("en-IN")}</span>
             )}
             <span className="flex items-center gap-1 text-[11px] text-green-600"><Tag size={12} />{product.commission}%</span>
           </div>
@@ -243,8 +243,8 @@ const ProductCard = ({ product, viewMode, id }) => {
           <h3 className="text-[12px] sm:text-[13px] text-[#1B1613] font-medium mb-1.5 leading-snug group-hover:text-[#8B6F47] transition-colors line-clamp-2">{product.productName}</h3>
           <p className="text-[10px] text-[#9a8d80] mb-2 uppercase tracking-wider">{product.category}</p>
           <div className="flex items-center gap-2">
-            <span className="text-[14px] font-light text-[#1B1613]">{product.displayPrice || `₹${product.price?.toLocaleString("en-IN")}`}</span>
-            {product.comparePrice && <span className="text-[11px] text-[#9a8d80] line-through">₹{product.comparePrice?.toLocaleString("en-IN")}</span>}
+            <span className="text-[14px] font-light text-[#1B1613]">{product.displayPrice || `${product.price?.toLocaleString("en-IN")}`}</span>
+            {product.comparePrice && <span className="text-[11px] text-[#9a8d80] line-through">{product.comparePrice?.toLocaleString("en-IN")}</span>}
           </div>
           <div className="flex flex-wrap gap-1 mt-2">
             {product.platforms?.slice(0, 2).map((platform) => (
@@ -310,6 +310,7 @@ const AllProductsPage = () => {
     setLoading(true);
     setError(null);
     try {
+      
       const params = new URLSearchParams();
       params.append("page", String(page));
       params.append("limit", String(limit));
@@ -429,7 +430,7 @@ const AllProductsPage = () => {
 
                   {/* Price Range */}
                   <div className="bg-white border border-[#e5d8cf] p-4">
-                    <h3 className="text-[10px] tracking-[0.2em] uppercase text-[#9a8d80] font-medium mb-3">Price Range (₹)</h3>
+                    <h3 className="text-[10px] tracking-[0.2em] uppercase text-[#9a8d80] font-medium mb-3">Price Range ()</h3>
                     <div className="flex items-center gap-2">
                       <input type="number" placeholder="Min" value={priceRange.min} onChange={(e) => setPriceRange({ ...priceRange, min: e.target.value })} className="w-full px-3 py-2 border border-[#e5d8cf] text-[11px] focus:outline-none focus:border-[#8B6F47] transition-all duration-300" />
                       <span className="text-[#9a8d80]">-</span>

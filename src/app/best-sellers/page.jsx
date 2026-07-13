@@ -1,4 +1,3 @@
-// app/best-sellers/page.jsx
 "use client";
 
 import React, { useState, useEffect, useCallback } from "react";
@@ -154,11 +153,11 @@ const ProductCard = ({ product, rank }) => {
 
           <div className="flex items-center gap-2">
             <span className="text-[14px] font-light text-[#1B1613]">
-              {product.displayPrice || `₹${product.price?.toLocaleString("en-IN")}`}
+              {product.displayPrice || `${product.price?.toLocaleString("en-IN")}`}
             </span>
             {product.comparePrice && (
               <span className="text-[11px] text-[#9a8d80] line-through">
-                ₹{product.comparePrice?.toLocaleString("en-IN")}
+                {product.comparePrice?.toLocaleString("en-IN")}
               </span>
             )}
           </div>
@@ -375,6 +374,7 @@ const BestSellersPage = () => {
               <RefreshCw size={14} strokeWidth={1.5} /> Try Again
             </button>
           </div>
+          
         ) : products.length === 0 ? (
           <div className="bg-white border border-[#e5d8cf] p-12 text-center">
             <Crown size={48} strokeWidth={1.5} className="text-[#e5d8cf] mx-auto mb-4" />

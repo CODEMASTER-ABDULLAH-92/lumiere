@@ -101,7 +101,7 @@ const CartPage = () => {
   // Share to WhatsApp
   const shareToWhatsApp = (item) => {
     const url = getProductUrl(item._id);
-    const text = `Check out this product from Lumière Beauty!%0A%0A${item.productName}%0A${item.displayPrice || `₹${item.price?.toLocaleString("en-IN")}`}%0A%0A${url}`;
+    const text = `Check out this product from Lumière Beauty!%0A%0A${item.productName}%0A${item.displayPrice || `${item.price?.toLocaleString("en-IN")}`}%0A%0A${url}`;
     window.open(`https://wa.me/?text=${text}`, "_blank");
     setSharePopup(null);
   };
@@ -118,7 +118,7 @@ const CartPage = () => {
   const shareToEmail = (item) => {
     const url = getProductUrl(item._id);
     const subject = `Check out ${item.productName} from Lumière Beauty`;
-    const body = `I found this product from Lumière Beauty and thought you might like it!%0A%0A${item.productName}%0A${item.displayPrice || `₹${item.price?.toLocaleString("en-IN")}`}%0A%0AView here: ${url}`;
+    const body = `I found this product from Lumière Beauty and thought you might like it!%0A%0A${item.productName}%0A${item.displayPrice || `${item.price?.toLocaleString("en-IN")}`}%0A%0AView here: ${url}`;
     window.open(`mailto:?subject=${encodeURIComponent(subject)}&body=${body}`, "_blank");
     setSharePopup(null);
   };
@@ -210,6 +210,8 @@ const CartPage = () => {
               </Link>
             </motion.div>
           ) : (
+
+            
             <div>
               <div className="flex items-center justify-between mb-6">
                 <p className="text-[12px] text-[#9a8d80]">
@@ -271,11 +273,11 @@ const CartPage = () => {
                             {/* Price */}
                             <div className="mt-2">
                               <span className="text-[16px] font-medium text-[#1B1613]">
-                                {item.displayPrice || `₹${(item.price || 0).toLocaleString("en-IN")}`}
+                                {item.displayPrice || `${(item.price || 0).toLocaleString("en-IN")}`}
                               </span>
                               {item.comparePrice && (
                                 <span className="text-[12px] text-[#9a8d80] line-through ml-2">
-                                  ₹{item.comparePrice?.toLocaleString("en-IN")}
+                                  {item.comparePrice?.toLocaleString("en-IN")}
                                 </span>
                               )}
                             </div>
